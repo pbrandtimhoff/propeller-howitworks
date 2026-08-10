@@ -163,7 +163,8 @@
   /* compact, glance-able 3-step */
   .steps3{display:flex;align-items:stretch;justify-content:center;gap:16px;flex-wrap:wrap;}
   .s3{flex:1 1 250px;max-width:340px;position:relative;background:var(--card);border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);padding:30px 24px 26px;}
-  .s3n{position:absolute;top:-17px;left:24px;width:36px;height:36px;border-radius:50%;background:var(--ink);color:#fff;font-family:var(--font-display);font-size:19px;display:grid;place-items:center;border:3px solid var(--paper);}
+  .s3 h3{display:flex;align-items:baseline;gap:9px;}
+  .s3 h3 .num{background:var(--pg);-webkit-background-clip:text;background-clip:text;color:transparent;}
   .s3ic{font-size:42px;line-height:1;display:block;width:144px;height:144px;}
   .s3 h3{font-family:var(--font-display);font-size:27px;margin:14px 0 8px;text-transform:uppercase;line-height:1.08;}
   .s3 p{font-size:14.5px;line-height:1.5;color:var(--muted);font-weight:500;}
@@ -243,7 +244,7 @@
   .premier .plede{margin:18px 0 6px;max-width:52ch;font-size:17px;font-weight:500;line-height:1.55;color:rgba(255,255,255,0.82);}
 
   /* what Premier unlocks - real gradient GIF icons from the Premier page */
-  .unlocks{display:grid;grid-template-columns:repeat(2,1fr);gap:24px 18px;margin:42px 0 6px;max-width:900px;}
+  .unlocks{display:grid;grid-template-columns:repeat(2,1fr);gap:40px 36px;margin:42px 0 6px;max-width:1180px;}
   .unlock{display:flex;gap:14px;align-items:flex-start;}
   .unlock img{width:72px;height:72px;object-fit:contain;flex:0 0 72px;}
   .unlock-icon{width:144px;height:144px;flex:0 0 144px;position:relative;}
@@ -375,23 +376,20 @@
     </div>
     <div class="steps3 rv">
       <div class="s3">
-        <span class="s3n">1</span>
         <div class="s3ic" id="lottie-takeaction"></div>
-        <h3>Take action</h3>
+        <h3><span class="num">01</span>Take action</h3>
         <p>Sign, watch, learn, or give for a cause you care about. Every action backs a real nonprofit.</p>
       </div>
       <span class="s3-arrow">→</span>
       <div class="s3">
-        <span class="s3n">2</span>
-        <span class="s3ic">⚡</span>
-        <h3>Earn points</h3>
+        <div class="s3ic" id="lottie-earnpoints"></div>
+        <h3><span class="num">02</span>Earn points</h3>
         <p>Every action stacks points. The more you show up, the more you rack up.</p>
       </div>
       <span class="s3-arrow">→</span>
       <div class="s3">
-        <span class="s3n">3</span>
         <span class="s3ic">🎁</span>
-        <h3>Get rewarded</h3>
+        <h3><span class="num">03</span>Get rewarded</h3>
         <p>Turn points into entries to win, real rewards, or donations back to the cause.</p>
       </div>
     </div>
@@ -588,10 +586,11 @@
 </script>
 <a href="index.html" data-proto-nav style="position:fixed;left:16px;bottom:16px;z-index:2147483000;display:inline-flex;align-items:center;gap:7px;padding:9px 14px;border-radius:999px;font:600 12px/1 -apple-system,BlinkMacSystemFont,system-ui,sans-serif;letter-spacing:.02em;color:#fff;background:rgba(18,18,18,.82);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.18);text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.35)">◱ All screens</a>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
-<script src="assets/lottie/doublepoints-3.data.js"></script>
+<script src="assets/lottie/doublepoints-5.data.js"></script>
 <script src="assets/lottie/rewards-icon-5.data.js"></script>
 <script src="assets/lottie/enterwithpoints-6.data.js"></script>
 <script src="assets/lottie/takeaction-3.data.js"></script>
+<script src="assets/lottie/earnpoints-icon-optimized.data.js"></script>
 <script>
   // small animated icons (Lottie) — Premier unlocks, "Real Rewards" gets its own icon
   (function(){
@@ -602,7 +601,8 @@
       'lottie-rewards': window.LOTTIE_REWARDS_DATA,
       'lottie-enterpoints': window.LOTTIE_ENTERPOINTS_DATA,
       'lottie-impact': window.LOTTIE_2XPOINTS_DATA,
-      'lottie-takeaction': window.LOTTIE_TAKEACTION_DATA
+      'lottie-takeaction': window.LOTTIE_TAKEACTION_DATA,
+      'lottie-earnpoints': window.LOTTIE_EARNPOINTS_DATA
     };
     Object.keys(iconData).forEach(function(id){
       var icon = document.getElementById(id);
