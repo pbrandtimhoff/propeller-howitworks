@@ -197,6 +197,8 @@
 
   /* Hero */
   .im-hero{position:relative;display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);align-items:center;gap:40px;padding:40px 0 40px;text-align:left;}
+  @media (min-width:1001px){.im-hero{min-height:calc(100svh - 97px - 106px);box-sizing:border-box;align-content:center;}}
+  @media (min-width:1001px){.im-hero .collage{transform:scale(1.2);transform-origin:85% 50%;}.im-hero .hero-copy{z-index:3;}}
   .collage{position:relative;width:100%;aspect-ratio:1.14/1;margin:52px 0 -10%;}
   .collage .heart{position:absolute;z-index:12;pointer-events:none;height:auto;filter:drop-shadow(0 4px 6px rgba(20,10,32,.25));animation:hbeat 2.4s ease-in-out infinite;}
   .collage .heart.h1{left:86%;top:-4%;width:11%;rotate:14deg;}
