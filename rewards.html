@@ -180,7 +180,7 @@
   html{background:#fbebd5;}
   body{background:transparent;}
   /* crumpled cream paper pinned behind the page (iOS-safe fixed layer) */
-  body::before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;background:#fbebd5 url('assets/rewards/bg-paper.webp') center/cover no-repeat;}
+  body::before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;background:#fbebd5 url('bg-paper.webp') center/cover no-repeat;}
 
   nav.primary a[aria-current="page"]:not(.premier-pill){color:#fff;background:#2a2730;padding:8px 12px;border-radius:999px;}
   .wrap{max-width:1440px;margin:0 auto;padding:0 72px;}
@@ -290,7 +290,7 @@
   .group[hidden]{display:none;}
   .group-head{margin-bottom:28px;}
   /* each category sits in its own tinted panel (a shade lighter than its filter button) */
-  .group{--pad:max(72px,calc((100vw - 1440px)/2 + 72px));--tint:var(--cream);background:var(--tint) url(assets/rewards/bg-crumple.webp) center/cover no-repeat;background-blend-mode:multiply;border-top:2px solid var(--ink-2);border-bottom:2px solid var(--ink-2);border-radius:0;width:100vw;margin:0 0 -2px calc(50% - 50vw);padding:52px var(--pad) 62px;overflow:hidden;}
+  .group{--pad:max(72px,calc((100vw - 1440px)/2 + 72px));--tint:var(--cream);background:var(--tint) url(bg-crumple.webp) center/cover no-repeat;background-blend-mode:multiply;border-top:2px solid var(--ink-2);border-bottom:2px solid var(--ink-2);border-radius:0;width:100vw;margin:0 0 -2px calc(50% - 50vw);padding:52px var(--pad) 62px;overflow:hidden;}
   #all-groups .group{margin-bottom:-2px;}
   .group .grid{width:auto;margin:-6px calc(var(--pad) * -1) -14px;padding:6px var(--pad) 14px;scroll-padding-inline:var(--pad);}  #g-xp{--tint:#ffeed5;}
   #g-rw[data-cat="points"],#g-rw[data-cat="all"],[data-sec="perks"]{--tint:#e2fcea;}
@@ -413,14 +413,14 @@
 <main class="wrap">
   <article class="spotlight">
     <div class="media">
-      <img src="assets/rewards/rw-yerba-spotlight.webp" alt="Three hands toasting with cans of Yerba Madre organic yerba mate" decoding="async">
-    <img class="perk-badge" src="assets/rewards/premier-perk-badge.svg" alt="Premier perk">
+      <img src="rw-yerba-spotlight.webp" alt="Three hands toasting with cans of Yerba Madre organic yerba mate" decoding="async">
+    <img class="perk-badge" src="premier-perk-badge.svg" alt="Premier perk">
     </div>
     <div class="copy">
       <p class="mono-label">In the spotlight</p>
       <h2>12-pack case of Yerba Madre Original Organic Yerba Mate</h2>
       <div class="meta-row">
-        <span class="pts-plain"><img src="assets/rewards/points-coin.svg" alt="" aria-hidden="true">1,000 points</span>
+        <span class="pts-plain"><img src="points-coin.svg" alt="" aria-hidden="true">1,000 points</span>
       </div>
       <a href="#lineup-title" class="btn btn-green">Explore reward</a>
     </div>
@@ -439,7 +439,7 @@
       </div></div></div>
       <div class="join-premier" id="join-premier">
       <p class="mono-label">Double your points:</p>
-      <div class="jp-row"><img class="jp-badge" src="assets/rewards/premier-icon.svg" alt="" aria-hidden="true"><a href="premier.html" class="btn btn-premier">Join Premier</a></div>
+      <div class="jp-row"><img class="jp-badge" src="premier-icon.svg" alt="" aria-hidden="true"><a href="premier.html" class="btn btn-premier">Join Premier</a></div>
       </div></div>
     <div class="chips-band"><div class="view-wrap"><div class="toggle" id="within" role="group" aria-label="Filter by points balance"><button class="active" data-within="0" aria-pressed="true">All rewards</button><button data-within="1" aria-pressed="false">Within my balance</button></div></div><div class="chips" role="group" aria-label="Filter rewards" id="chips"></div></div>
 
@@ -525,35 +525,35 @@
 
   // Experiences (enter to win). img: null until the real artwork is added.
   var XP=[
-    {t:"Be Guster's guest for their weekend with the Atlanta Symphony",ph:"Guster",img:'assets/rewards/xp-guster.webp',bg:'#3b3845',glow:'#8e8aa0'},
-    {t:'Win a trip to see Charles Wesley Godwin at Red Rocks',ph:'Charles Wesley Godwin',img:'assets/rewards/xp-cwg.webp',bg:'#6b4a2a',glow:'#e5a55a',fg:'#fff1d6'},
-    {t:"Experience Icona Pop's Ritual Retreat in Stockholm, Sweden",ph:'Icona Pop',img:'assets/rewards/xp-icona.webp',bg:'#6e1414',glow:'#e2403a'},
-    {t:'Spend a day in Nashville with Tiny Habits',ph:'Tiny Habits',img:'assets/rewards/xp-tinyhabits.webp',bg:'#8a6a12',glow:'#f3cf3f',fg:'#2a1a0a'},
-    {t:'Win a VIP trip to Haunted Fest St. Pete 2026',ph:'Haunted Fest',img:'assets/rewards/xp-haunted.webp',bg:'#101a4a',glow:'#4a6bd8'},
-    {t:'Win a VIP trip to meet Koe Wetzel at Red Rocks',ph:'Koe Wetzel',img:'assets/rewards/xp-koe.webp',bg:'#2f4a2c',glow:'#7fa06a'},
-    {t:'Win a VIP trip to meet Allison Russell in Montreal',ph:'Allison Russell',img:'assets/rewards/xp-allison.webp',bg:'#4a4a2c',glow:'#b8b37a'},
-    {t:'Win a VIP trip to Get Freaky: Neon Nightmare 2026',ph:'Get Freaky',img:'assets/rewards/xp-getfreaky.webp',bg:'#1c0f3a',glow:'#c23cf0'},
-    {t:'Win a VIP trip to see beabadoobee in Seattle',ph:'beabadoobee',img:'assets/rewards/xp-beabadoobee.webp',bg:'#3d4450',glow:'#aab4c2'},
-    {t:'Win a VIP trip to meet Maddie Zahm in Seattle',ph:'Maddie Zahm',img:'assets/rewards/xp-maddie.webp',bg:'#34507a',glow:'#9ec3ea'},
-    {t:'Win a VIP trip to meet Young Miko in NYC',ph:'Young Miko',img:'assets/rewards/xp-youngmiko.webp',bg:'#5a2a22',glow:'#e9b37a'},
-    {t:'Win a trip to meet Sienna Spiro in San Francisco',ph:'Sienna Spiro',img:'assets/rewards/xp-sienna.webp',bg:'#3a3432',glow:'#b3a79e'},
-    {t:'Win a trip to meet Isaiah Rashad + go side stage at Camp Flog Gnaw',ph:'Isaiah Rashad',img:'assets/rewards/xp-isaiah.webp',bg:'#4a3410',glow:'#d9a441'},
-    {t:'Win a trip to meet Shakey Graves in NYC',ph:'Shakey Graves',img:'assets/rewards/xp-shakey.webp',bg:'#2e3a4a',glow:'#8ea4c0'}
+    {t:"Be Guster's guest for their weekend with the Atlanta Symphony",ph:"Guster",img:'xp-guster.webp',bg:'#3b3845',glow:'#8e8aa0'},
+    {t:'Win a trip to see Charles Wesley Godwin at Red Rocks',ph:'Charles Wesley Godwin',img:'xp-cwg.webp',bg:'#6b4a2a',glow:'#e5a55a',fg:'#fff1d6'},
+    {t:"Experience Icona Pop's Ritual Retreat in Stockholm, Sweden",ph:'Icona Pop',img:'xp-icona.webp',bg:'#6e1414',glow:'#e2403a'},
+    {t:'Spend a day in Nashville with Tiny Habits',ph:'Tiny Habits',img:'xp-tinyhabits.webp',bg:'#8a6a12',glow:'#f3cf3f',fg:'#2a1a0a'},
+    {t:'Win a VIP trip to Haunted Fest St. Pete 2026',ph:'Haunted Fest',img:'xp-haunted.webp',bg:'#101a4a',glow:'#4a6bd8'},
+    {t:'Win a VIP trip to meet Koe Wetzel at Red Rocks',ph:'Koe Wetzel',img:'xp-koe.webp',bg:'#2f4a2c',glow:'#7fa06a'},
+    {t:'Win a VIP trip to meet Allison Russell in Montreal',ph:'Allison Russell',img:'xp-allison.webp',bg:'#4a4a2c',glow:'#b8b37a'},
+    {t:'Win a VIP trip to Get Freaky: Neon Nightmare 2026',ph:'Get Freaky',img:'xp-getfreaky.webp',bg:'#1c0f3a',glow:'#c23cf0'},
+    {t:'Win a VIP trip to see beabadoobee in Seattle',ph:'beabadoobee',img:'xp-beabadoobee.webp',bg:'#3d4450',glow:'#aab4c2'},
+    {t:'Win a VIP trip to meet Maddie Zahm in Seattle',ph:'Maddie Zahm',img:'xp-maddie.webp',bg:'#34507a',glow:'#9ec3ea'},
+    {t:'Win a VIP trip to meet Young Miko in NYC',ph:'Young Miko',img:'xp-youngmiko.webp',bg:'#5a2a22',glow:'#e9b37a'},
+    {t:'Win a trip to meet Sienna Spiro in San Francisco',ph:'Sienna Spiro',img:'xp-sienna.webp',bg:'#3a3432',glow:'#b3a79e'},
+    {t:'Win a trip to meet Isaiah Rashad + go side stage at Camp Flog Gnaw',ph:'Isaiah Rashad',img:'xp-isaiah.webp',bg:'#4a3410',glow:'#d9a441'},
+    {t:'Win a trip to meet Shakey Graves in NYC',ph:'Shakey Graves',img:'xp-shakey.webp',bg:'#2e3a4a',glow:'#8ea4c0'}
   ];
   // Point rewards. cats: points | tickets | shop
   var RW=[
-    {t:'The Busyhead Project t-shirt',pts:4000,cats:['points','shop'],img:'assets/rewards/rw-busyhead-tee.webp'},
-    {t:'Noisemakers welcome gift',pts:0,cats:['points'],img:'assets/rewards/rw-nfn-gift.webp'},
-    {t:'Signed Noah Kahan The Great Divide World Tour poster',pts:7500,cats:['points','shop'],img:'assets/rewards/rw-great-divide.webp'},
-    {t:"Signed Noah Kahan x The Busyhead Project's Folk & Fairways 2026 poster",pts:7500,cats:['points','shop'],img:'assets/rewards/rw-folk-fairways.webp'},
-    {t:'Earn a pair of tickets to see Bleachers at a show near you',pts:800,cats:['points','tickets'],img:'assets/rewards/rw-bleachers-tix.webp'},
-    {t:'Good Dye Young vivid hair color bundle',pts:1500,cats:['points','shop'],img:'assets/rewards/rw-good-dye.webp'},
-    {t:'Earn a pair of tickets to see Maddie Zahm at a show near you',pts:200,cats:['points','tickets'],img:'assets/rewards/rw-maddie-tix.webp'},
-    {t:'Girls Just Wanna Weekend x Looking Out Foundation poster',pts:1500,cats:['points','shop'],img:'assets/rewards/rw-gjww-poster.webp'},
-    {t:'Girls Just Wanna Weekend 2025 x Looking Out Foundation limited edition holographic poster',pts:4000,cats:['points','shop'],img:'assets/rewards/rw-holo-poster.webp'},
-    {t:'Signed Girls Just Wanna Weekend x Looking Out Foundation poster',pts:7500,cats:['points','shop'],img:'assets/rewards/rw-gjww-signed.webp'},
-    {t:'Signed Brandi Carlile Echoes Through the Canyon poster',pts:7500,cats:['points','shop'],img:'assets/rewards/rw-gorge-poster.webp'},
-    {t:'Brandi Carlile The Human Tour signed setlist - February 14, 2026',pts:5000,cats:['points','shop'],img:'assets/rewards/rw-setlist.webp'}
+    {t:'The Busyhead Project t-shirt',pts:4000,cats:['points','shop'],img:'rw-busyhead-tee.webp'},
+    {t:'Noisemakers welcome gift',pts:0,cats:['points'],img:'rw-nfn-gift.webp'},
+    {t:'Signed Noah Kahan The Great Divide World Tour poster',pts:7500,cats:['points','shop'],img:'rw-great-divide.webp'},
+    {t:"Signed Noah Kahan x The Busyhead Project's Folk & Fairways 2026 poster",pts:7500,cats:['points','shop'],img:'rw-folk-fairways.webp'},
+    {t:'Earn a pair of tickets to see Bleachers at a show near you',pts:800,cats:['points','tickets'],img:'rw-bleachers-tix.webp'},
+    {t:'Good Dye Young vivid hair color bundle',pts:1500,cats:['points','shop'],img:'rw-good-dye.webp'},
+    {t:'Earn a pair of tickets to see Maddie Zahm at a show near you',pts:200,cats:['points','tickets'],img:'rw-maddie-tix.webp'},
+    {t:'Girls Just Wanna Weekend x Looking Out Foundation poster',pts:1500,cats:['points','shop'],img:'rw-gjww-poster.webp'},
+    {t:'Girls Just Wanna Weekend 2025 x Looking Out Foundation limited edition holographic poster',pts:4000,cats:['points','shop'],img:'rw-holo-poster.webp'},
+    {t:'Signed Girls Just Wanna Weekend x Looking Out Foundation poster',pts:7500,cats:['points','shop'],img:'rw-gjww-signed.webp'},
+    {t:'Signed Brandi Carlile Echoes Through the Canyon poster',pts:7500,cats:['points','shop'],img:'rw-gorge-poster.webp'},
+    {t:'Brandi Carlile The Human Tour signed setlist - February 14, 2026',pts:5000,cats:['points','shop'],img:'rw-setlist.webp'}
   ];
   var CHIPS=[['all','All rewards'],['points','Use points'],['tickets','Tickets'],['win','Enter to win'],['shop','Shop'],['auction','Auctions']];
 
@@ -562,12 +562,12 @@
 
   function catIco(r){
     var f=r.cats.indexOf('tickets')>-1?'tickets.svg':r.cats.indexOf('shop')>-1?'shop-bag.svg':'points-coin.svg';
-    return '<img class="cat-ico" src="assets/rewards/'+f+'" alt="" aria-hidden="true">';
+    return '<img class="cat-ico" src="'+f+'" alt="" aria-hidden="true">';
   }
   document.getElementById('xp-grid').innerHTML=XP.map(function(x,i){
     var art=x.img?'<img src="'+x.img+'" alt="" loading="lazy" decoding="async">'
       :'<div class="ph">'+MARK+'</div>';
-    return '<a class="reward-card" href="#"><div class="media">'+art+'</div><div class="body"><h4>'+esc(x.t)+'</h4><div class="foot foot-center"><span class="btn btn-sm btn-coral">Enter now</span></div></div><img class="cat-ico" src="assets/rewards/enter-win.svg" alt="" aria-hidden="true"></a>';
+    return '<a class="reward-card" href="#"><div class="media">'+art+'</div><div class="body"><h4>'+esc(x.t)+'</h4><div class="foot foot-center"><span class="btn btn-sm btn-coral">Enter now</span></div></div><img class="cat-ico" src="enter-win.svg" alt="" aria-hidden="true"></a>';
   }).join('');
 
   var rwGrid=document.getElementById('rw-grid');
@@ -577,7 +577,7 @@
     var tix=r.cats.indexOf('tickets')>-1;
     var foot=can?'<span class="btn btn-sm '+(tix?'btn-blue':(r.cats.indexOf('shop')>-1?'btn-pink':'btn-green'))+' claim-btn">'+(tix?'Get tickets':'Claim reward')+'</span>'
       :'<span class="away"><span class="need">You need:</span>'+fmt(r.pts)+' points</span>';
-    return '<a class="reward-card" href="#" data-i="'+i+'"><div class="media" style="--tile:'+(r.tile||'#fff')+'">'+art+'<span class="pill-tag"><img class="lock-ico" src="assets/rewards/lock.svg" alt="" aria-hidden="true">Premier reward</span></div><div class="body"><h4>'+esc(r.t)+'</h4><div class="foot">'+foot+'</div></div>'+catIco(r)+'</a>';
+    return '<a class="reward-card" href="#" data-i="'+i+'"><div class="media" style="--tile:'+(r.tile||'#fff')+'">'+art+'<span class="pill-tag"><img class="lock-ico" src="lock.svg" alt="" aria-hidden="true">Premier reward</span></div><div class="body"><h4>'+esc(r.t)+'</h4><div class="foot">'+foot+'</div></div>'+catIco(r)+'</a>';
   }
   rwGrid.innerHTML=RW.map(rwCard).join('');
   // "All rewards" view: one section per category
@@ -610,7 +610,7 @@
     [].forEach.call(document.querySelectorAll('#chips .chip'),function(b){var n=b.querySelector('.n');if(n) n.textContent='('+count(b.dataset.cat)+')';});
   }
   var chipsEl=document.getElementById('chips');
-  chipsEl.innerHTML=CHIPS.map(function(c){return '<button class="chip" data-cat="'+c[0]+'" aria-pressed="'+(c[0]==='all')+'">'+(c[0]==='points'?'<img class="chip-ico" src="assets/rewards/points-coin.svg" alt="" aria-hidden="true">':c[0]==='tickets'?'<img class="chip-ico chip-ico-wide" src="assets/rewards/tickets.svg" alt="" aria-hidden="true">':c[0]==='win'?'<img class="chip-ico chip-ico-win" src="assets/rewards/enter-win.svg" alt="" aria-hidden="true">':c[0]==='shop'?'<img class="chip-ico chip-ico-shop" src="assets/rewards/shop-bag.svg" alt="" aria-hidden="true">':c[0]==='all'?'<img class="chip-ico" src="assets/rewards/all-star.svg" alt="" aria-hidden="true">':c[0]==='auction'?'<img class="chip-ico" src="assets/rewards/auction-paddle.svg" style="height:62px;margin:-6px 0" alt="" aria-hidden="true">':'<span class="chip-ico-slot" aria-hidden="true"></span>')+'<span class="lbl">'+c[1]+'<span class="n">('+count(c[0])+')</span></span></button>';}).join('');
+  chipsEl.innerHTML=CHIPS.map(function(c){return '<button class="chip" data-cat="'+c[0]+'" aria-pressed="'+(c[0]==='all')+'">'+(c[0]==='points'?'<img class="chip-ico" src="points-coin.svg" alt="" aria-hidden="true">':c[0]==='tickets'?'<img class="chip-ico chip-ico-wide" src="tickets.svg" alt="" aria-hidden="true">':c[0]==='win'?'<img class="chip-ico chip-ico-win" src="enter-win.svg" alt="" aria-hidden="true">':c[0]==='shop'?'<img class="chip-ico chip-ico-shop" src="shop-bag.svg" alt="" aria-hidden="true">':c[0]==='all'?'<img class="chip-ico" src="all-star.svg" alt="" aria-hidden="true">':c[0]==='auction'?'<img class="chip-ico" src="auction-paddle.svg" style="height:62px;margin:-6px 0" alt="" aria-hidden="true">':'<span class="chip-ico-slot" aria-hidden="true"></span>')+'<span class="lbl">'+c[1]+'<span class="n">('+count(c[0])+')</span></span></button>';}).join('');
 
   var HEADS={
     points:['Worth earning','Use your points','Signed posters, merch and tickets you can claim with points.'],
