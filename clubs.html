@@ -1,4 +1,3 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <title>Propeller Clubs</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -143,6 +142,7 @@
   @media (prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important;}}
   #lineup-title{scroll-margin-top:120px;}
 </style>
+<style>nav.primary a[aria-current="page"]:not(.premier-pill){color:#fff!important;background:none!important;padding:6px 0!important;border-radius:0!important;box-shadow:inset 0 -3px 0 #80F4A8;}</style>
 <header class="site">
   <div class="nav-row">
     <a class="logo" href="index.html" aria-label="Propeller home">
@@ -166,7 +166,7 @@
       <a href="#" data-top aria-current="page">Clubs</a>
       <a href="impact.html">Impact</a>
       <a href="how-it-works.html">How it works</a>
-      <a href="#">Winners</a>
+      <a href="winners.html">Winners</a>
       <a href="premier.html" class="premier-pill">Propeller Premier</a>
     </nav>
     <div class="nav-right">
@@ -410,7 +410,7 @@
       <a href="rewards.html">Experiences</a>
       <a href="index.html">Actions</a>
       <a href="rewards.html">Rewards</a>
-      <a href="#">Winner Stories</a>
+      <a href="winners.html">Winner Stories</a>
       <a href="#">Support</a>
       <a href="#">Privacy Policy</a>
       <a href="#">Terms of Service</a>
@@ -442,5 +442,3 @@
   document.querySelectorAll('[data-top]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();window.scrollTo({top:0,behavior:'smooth'});});});
   document.querySelectorAll('a[href^="#"]:not([data-top])').forEach(function(a){var id=a.getAttribute('href').slice(1);if(!id)return;a.addEventListener('click',function(e){var t=document.getElementById(id);if(!t)return;e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});});});
 </script>
-
-</body></html>
