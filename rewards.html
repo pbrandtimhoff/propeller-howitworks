@@ -143,6 +143,10 @@
   #lineup-title{scroll-margin-top:120px;}
 </style>
 <style>nav.primary a[aria-current="page"]:not(.premier-pill){color:#fff!important;background:none!important;padding:6px 0!important;border-radius:0!important;box-shadow:inset 0 -3px 0 #80F4A8;}</style>
+<style id="prem-hdr">.avatar.av-prem{background:linear-gradient(135deg,#2FB36A 0%,#E04A2A 100%)!important;color:#fff!important;font-family:var(--font-display);font-weight:700;font-size:14px;letter-spacing:.5px;text-shadow:none;box-shadow:0 0 0 2px #111,0 0 0 3.5px rgba(255,255,255,.18);}
+.avatar.av-prem:hover{box-shadow:0 0 0 2px #111,0 0 0 3.5px #80F4A8;}
+.prem-tag{font-family:var(--font-mono);font-size:11px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;background:linear-gradient(90deg,#80F4A8,#FF6D48);-webkit-background-clip:text;background-clip:text;color:transparent;margin-left:-6px;}
+.nav-right{gap:14px;}</style>
 <header class="site">
   <div class="nav-row">
     <a class="logo" href="index.html" aria-label="Propeller home">
@@ -170,7 +174,7 @@
       <a href="premier.html" class="premier-pill">Propeller Premier</a>
     </nav>
     <div class="nav-right">
-      <a class="avatar" href="index.html" aria-label="Your dashboard">BI</a>
+      <a class="avatar av-prem" href="index.html" aria-label="Your dashboard, Premier member">BI</a><span class="prem-tag">Premier</span>
       <span class="pts-pill">4,000 pts</span>
     </div>
   </div>
